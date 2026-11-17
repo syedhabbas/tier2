@@ -20,7 +20,7 @@ const mongoURI = 'mongodb://mongo:27017/mydb';
     -d mongodb/mongodb-community-server:latest
 
 To get into the above created container 
-# docker exec -it mongodb mongosh -u admin -p secretpassword
+# docker exec -it mongo mongosh -u admin -p secretpassword
 
 Once we are inside the running container, we can use mongodb commands to show / create database and tables 
 test > show dbs 
@@ -29,3 +29,15 @@ test > show tables
 
 # docker build -t tier2-app:latest . 
 # docker run -d --name nodejs -p 3000:3000 --network tier2 tier2-app:latest 
+
+
+Now to configure docker-compose.yml 
+
+we will build image on EC2 for our application with above command and will push it on docker hub.
+
+# docker build -t tier2-app:latest . 
+# docker tag tier2-app:latest syedhabbas/tier2:latest
+# docker login -u syedhabbas
+# docker push 
+
+
