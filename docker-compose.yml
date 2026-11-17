@@ -12,7 +12,8 @@ services:
       - mongo
 
   mongo:
-    image: mongodb/mongodb-community-server:latest
+    image: mongo:latest
+    container_name: mongoDB
     ports:
       - "27017:27017"
     volumes:
