@@ -6,6 +6,7 @@ const app = express ()
 app.use(express.json());
 const port = 3000
 
+// When we run mongo container, its name must be mongo as shown below 
 const mongoURI = 'mongodb://mongo:27017/mydb';
 
 mongoose.connect (mongoURI)

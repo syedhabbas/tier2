@@ -1,13 +1,22 @@
 
 explain project 
 
-MongoDB - To create MongoDB container with latest image from MongoDB Community Server on EC2 
+MongoDB - To create MongoDB container with latest image from MongoDB Community Server on EC2
+Mongo container name must match mongo, inside following line mentioned inside index.js file
+const mongoURI = 'mongodb://mongo:27017/mydb';
 
-# docker run --name mongodb \
+=== With password === 
+# docker run --name mongo \
     -p 27017:27017 \
     --network tier2 \
     -e MONGO_INITDB_ROOT_USERNAME=admin \
     -e MONGO_INITDB_ROOT_PASSWORD=secretpassword \
+    -d mongodb/mongodb-community-server:latest
+
+=== Without password ===
+# docker run --name mongo \
+    -p 27017:27017 \
+    --network tier2 \
     -d mongodb/mongodb-community-server:latest
 
 To get into the above created container 
