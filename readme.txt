@@ -5,6 +5,7 @@ MongoDB - To create MongoDB container with latest image from MongoDB Community S
 
 # docker run --name mongodb \
     -p 27017:27017 \
+    --network tier2 \
     -e MONGO_INITDB_ROOT_USERNAME=admin \
     -e MONGO_INITDB_ROOT_PASSWORD=secretpassword \
     -d mongodb/mongodb-community-server:latest
