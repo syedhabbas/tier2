@@ -1,7 +1,9 @@
 
 services:
+
   app:
     image: syedhabbas/tier2:latest
+    container_name: nodejs
     ports:
       - "3000:3000"
     environment:
@@ -11,6 +13,7 @@ services:
 
   mongo:
     image: mongodb/mongodb-community-server:latest
+    container_name: mongo
     ports:
       - "27017:27017"
     volumes:
