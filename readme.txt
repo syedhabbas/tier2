@@ -1,5 +1,10 @@
 
-explain project 
+In this project, we will create tier2 application with NodeJS & MongoDB. We will create docker image and container
+with both Dockerfile and docker-compose.yml
+In this project we will run two separate containers both for NodeJS and MongoDB., and both will communicate with 
+each other via common network. docker-compose.yml creates network by default but in Dockerfile we need to create
+and then specify network in CLI 
+
 
 MongoDB - To create MongoDB container with latest image from MongoDB Community Server on EC2
 Mongo container name must match mongo, inside following line mentioned inside index.js file
@@ -31,7 +36,8 @@ test > show tables
 # docker run -d --name nodejs -p 3000:3000 --network tier2 tier2-app:latest 
 
 
-Now to configure docker-compose.yml 
+Now to configure docker-compose.yml., it will create its own new network. In docker-compose.yml file we will add all
+the commands which we were using on CLI to build images and container 
 
 we will build image on EC2 for our application with above command and will push it on docker hub.
 
