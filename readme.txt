@@ -18,3 +18,5 @@ test > show dbs
 test > use local
 test > show tables 
 
+# docker build -t tier2-app:latest . 
+# docker run -d --name nodejs -p 3000:3000 --network tier2 tier2-app:latest 
